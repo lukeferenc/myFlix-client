@@ -7,16 +7,12 @@ class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies:[
-        {Title: "Titanic", Description: "boatMovie", ImgPath: "https://m.media-amazon.com/images/I/91aRw4vKOZL._AC_UY218_.jpg"},
-        {Title: "Forsaken", Description: "zombieMovie", ImgPath: "https://ia.media-imdb.com/images/M/MV5BODE0NTUwNzA3Ml5BMl5BanBnXkFtZTgwOTQ3OTI3NzE@._V1_UY1200_CR90,0,630,1200_AL_.jpg"},
-        {Title: "Marley and me", Description: "Dogmovie", ImgPath: "https://fanart.tv/fanart/movies/14306/movieposter/marley--me-5dc8167278b2d.jpg"}
-      ],
+      movies:[],
       selectedMovie: null,
     };
   }
 
- /* componentDidMount() {
+ componentDidMount() {
     axios
       .get("https://lukesmovies.herokuapp.com/movies")
       .then((response) => {
@@ -27,7 +23,7 @@ class MainView extends React.Component {
       .catch((error) => {
         console.log(error);
       });
-  } */
+  } 
 
   /*When a movie is clicked, this function is invoked and updates 
   the state of the `selectedMovie` *property to that movie*/

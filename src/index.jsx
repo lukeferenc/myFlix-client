@@ -13,6 +13,16 @@ class MyFlixApplication extends React.Component {
   }
 }
 
+app.get("/movies", function (req, res) {
+  Movies.find()
+    .then(function (movies) {
+      res.status(201).json(movies);
+    })
+    .catch(function (error) {
+      console.error(error);
+      res.status(500).send("Error: " + error);
+    });
+});
 
 
 // Finds the root of your app

@@ -1,8 +1,28 @@
 import React from "react";
+import axios from "axios";
 
 export class MovieView extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
+  componentDidMount() {
+    axios
+      .get("https://lukesmovies.herokuapp.com/genres")
+      .then((response) => {
+        this.setState({
+          genres: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     const { movie, onBackClick } = this.props;
+
 
     return (
       <div className="movie-view">

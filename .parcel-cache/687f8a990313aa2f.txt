@@ -19,7 +19,7 @@
 81C:\Users\lukep\coding\myFlix-client\node_modules\highlight.js\scss\grayscale.scss121436361000000000 0
 88C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\fs-write-stream-atomic\index.js121436361000000000 0
 59C:\Users\lukep\coding\myFlix-client\node_modules\source-map132739626275494863 1
-40C:\Users\lukep\coding\myFlix-client\dist132755911716679295 1
+40C:\Users\lukep\coding\myFlix-client\dist132755942197799353 1
 81C:\Users\lukep\coding\myFlix-client\node_modules\highlight.js\scss\a11y-dark.scss121436361000000000 0
 64C:\Users\lukep\coding\myFlix-client\node_modules\.bin\rimraf.cmd132739626281706260 0
 85C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\watcher\src\PromiseRunner.hh121436361000000000 0
@@ -73,14 +73,14 @@
 61C:\Users\lukep\coding\myFlix-client\src\components\movie-view132755910386693647 1
 82C:\Users\lukep\coding\myFlix-client\node_modules\highlight.js\lib\languages\php.js121436361000000000 0
 81C:\Users\lukep\coding\myFlix-client\node_modules\highlight.js\styles\sunburst.css121436361000000000 0
-74C:\Users\lukep\coding\myFlix-client\src\components\main-view\main-view.jsx132755910386553620 0
+74C:\Users\lukep\coding\myFlix-client\src\components\main-view\main-view.jsx132756138558998009 0
 68C:\Users\lukep\coding\myFlix-client\node_modules\isexe\test\basic.js131347036700000000 0
 80C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\plugin\lib\PluginAPI.js121436361000000000 0
 75C:\Users\lukep\coding\myFlix-client\node_modules\nan\nan_maybe_pre_43_inl.h132319691430000000 0
 84C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\utils\test\throttle.test.js121436361000000000 0
 70C:\Users\lukep\coding\myFlix-client\node_modules\utility-types\LICENSE121436361000000000 0
 71C:\Users\lukep\coding\myFlix-client\node_modules\node-forge\lib\sha1.js121436361000000000 0
-76C:\Users\lukep\coding\myFlix-client\src\components\movie-view\movie-view.jsx132755910386583636 0
+76C:\Users\lukep\coding\myFlix-client\src\components\movie-view\movie-view.jsx132755941316828510 0
 53C:\Users\lukep\coding\myFlix-client\node_modules\base132739626273604453 1
 117C:\Users\lukep\coding\myFlix-client\node_modules\micromatch\node_modules\braces\node_modules\extend-shallow\README.md130800381770000000 0
 115C:\Users\lukep\coding\myFlix-client\node_modules\split2\node_modules\readable-stream\lib\internal\streams\stream.js121436361000000000 0
@@ -91,7 +91,7 @@
 71C:\Users\lukep\coding\myFlix-client\node_modules\mkdirp\lib\path-arg.js121436361000000000 0
 69C:\Users\lukep\coding\myFlix-client\node_modules\nan\doc\node_misc.md132319691410000000 0
 80C:\Users\lukep\coding\myFlix-client\node_modules\ncp\test\regular-fixtures\src\e130614920630000000 0
-76C:\Users\lukep\coding\myFlix-client\src\components\movie-card\movie-card.jsx132755910386573617 0
+76C:\Users\lukep\coding\myFlix-client\src\components\movie-card\movie-card.jsx132756140178455383 0
 67C:\Users\lukep\coding\myFlix-client\node_modules\yallist\yallist.js121436361000000000 0
 64C:\Users\lukep\coding\myFlix-client\node_modules\define-property132739626279525767 1
 63C:\Users\lukep\coding\myFlix-client\node_modules\urix\readme.md130381810850000000 0
@@ -2608,7 +2608,7 @@
 72C:\Users\lukep\coding\myFlix-client\node_modules\define-property\LICENSE131614657800000000 0
 77C:\Users\lukep\coding\myFlix-client\node_modules\define-property\node_modules132739626261481704 1
 77C:\Users\lukep\coding\myFlix-client\node_modules\define-property\package.json132739626278915637 0
-62C:\Users\lukep\coding\myFlix-client\dist\index.6701a6e1.js.map132755911716659299 0
+62C:\Users\lukep\coding\myFlix-client\dist\index.6701a6e1.js.map132755942197789465 0
 74C:\Users\lukep\coding\myFlix-client\node_modules\define-property\README.md131614718340000000 0
 75C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\workers\index.d.ts121436361000000000 0
 100C:\Users\lukep\coding\myFlix-client\node_modules\define-property\node_modules\is-accessor-descriptor132739626279665798 1
@@ -3069,7 +3069,7 @@
 72C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\fs\src\types.js121436361000000000 0
 58C:\Users\lukep\coding\myFlix-client\node_modules\.bin\sass132739626281756268 0
 79C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\fs\node_modules\mkdirp132739626278615567 1
-58C:\Users\lukep\coding\myFlix-client\dist\index.6701a6e1.js132755911716409244 0
+58C:\Users\lukep\coding\myFlix-client\dist\index.6701a6e1.js132755942197539404 0
 83C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\fs\node_modules\mkdirp\bin132739626251359433 1
 88C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\fs\node_modules\mkdirp\index.js121436361000000000 0
 92C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\fs\node_modules\mkdirp\package.json132739626278265489 0

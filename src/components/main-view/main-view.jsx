@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import { LoginView } from '../login-view/login-view';
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
@@ -40,24 +41,38 @@ class MainView extends React.Component {
     });
   }
 
-  
+  render() {
+    const { movies, selectedMovie } = this.state;
 
- render() {
-  const { movies, selectedMovie } = this.state;
+    /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
-  if (movies.length === 0) return <div className="main-view" />;
+    // Before the movies have been loaded
+    if (movies.length === 0) return <div className="main-view" />;
 
-  return (
-    <div className="main-view">
-      {selectedMovie
-        ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-        : movies.map(movie => (
-          <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
-       ))
-      }
-    </div>
-  );
-}
+    return (
+      <div className="main-view">
+        {selectedMovie ? (
+          <MovieView
+            movie={selectedMovie}
+            onBackClick={(newSelectedMovie) => {
+              this.setSelectedMovie(newSelectedMovie);
+            }}
+          />
+        ) : (
+          movies.map((movie) => (
+            <MovieCard
+              key={movie.Title}
+              movieData={movie}
+              onMovieClick={(movie) => {
+                this.setSelectedMovie(movie);
+              }}
+            />
+          ))
+        )}
+      </div>
+    );
+  }
 }
 
 export default MainView;

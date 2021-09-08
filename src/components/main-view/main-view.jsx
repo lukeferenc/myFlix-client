@@ -13,8 +13,7 @@ class MainView extends React.Component {
   }
 
  componentDidMount() {
-    axios
-      .get("https://lukesmovies.herokuapp.com/movies")
+    axios.get("https://lukesmovies.herokuapp.com/movies")
       .then((response) => {
         this.setState({
           movies: response.data,
@@ -41,36 +40,24 @@ class MainView extends React.Component {
     });
   }
 
-  render() {
-     const { movies, selectedMovie } = this.state; // Object Destructuring
-    console.log(movies)
+  
 
-    if (movies.length === 0)
-      return <div className="main-view">The list is empty!</div>;
+ render() {
+  const { movies, selectedMovie } = this.state;
 
-    return (
-      <div className="main-view">
-        {selectedMovie ? (
-          <MovieView
-            movie={selectedMovie}
-            onBackClick={(newSelectedMovie) => {
-              this.setSelectedMovie(newSelectedMovie);
-            }}
-          />
-        ) : (
-          movies.map((movie) => (
-            <MovieCard
-              key={movie.Title}
-              movieData={movie}
-              onMovieClick={(movie) => {
-                this.setSelectedMovie(movie);
-              }}
-            />
-          ))
-        )}
-      </div>
-    );
-  }
+  if (movies.length === 0) return <div className="main-view" />;
+
+  return (
+    <div className="main-view">
+      {selectedMovie
+        ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+        : movies.map(movie => (
+          <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
+       ))
+      }
+    </div>
+  );
+}
 }
 
 export default MainView;

@@ -961,14 +961,6 @@ class MyFlixApplication extends _reactDefault.default.Component {
         }));
     }
 }
-app.get("/movies", function(req, res) {
-    Movies.find().then(function(movies) {
-        res.status(201).json(movies);
-    }).catch(function(error) {
-        console.error(error);
-        res.status(500).send("Error: " + error);
-    });
-});
 // Finds the root of your app
 const container = document.getElementsByClassName("app-container")[0];
 // Tells React to render your app in the root DOM element

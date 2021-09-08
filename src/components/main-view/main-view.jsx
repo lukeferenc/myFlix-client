@@ -1,28 +1,20 @@
 import React from "react";
-import axios from "axios";
-
+import axios from 'axios';
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-import { LoginView } from "../login-view/login-view";
-import { RegistrationView } from "../registration-view/registration-view";
-
-import "./main-view.scss";
 
 class MainView extends React.Component {
   constructor() {
     super();
-    //initial state is set to null
     this.state = {
-      movies: [],
+      movies:[],
       selectedMovie: null,
-      user: null,
-      register: null,
     };
   }
 
-  componentDidMount() {
+ componentDidMount() {
     axios
-      .get("https://cinemapp-backend.herokuapp.com/movies")
+      .get("https://lukesmovies.herokuapp.com/movies")
       .then((response) => {
         this.setState({
           movies: response.data,
@@ -31,19 +23,13 @@ class MainView extends React.Component {
       .catch((error) => {
         console.log(error);
       });
-  }
+  } 
 
   /*When a movie is clicked, this function is invoked and updates 
   the state of the `selectedMovie` *property to that movie*/
   setSelectedMovie(movie) {
     this.setState({
       selectedMovie: movie,
-    });
-  }
-
-  onRegistration(register) {
-    this.setState({
-      register,
     });
   }
 
@@ -55,64 +41,33 @@ class MainView extends React.Component {
     });
   }
 
-  getGenres() {
-    axios
-      .get("https://lukesmovies.herokuapp.com/movies")
-      .then((response) => {
-        this.setState({
-          genres: response.data,
-        });
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
   render() {
-    const { movies, selectedMovie, user, register, genres } = this.state;
+     const { movies, selectedMovie } = this.state; // Object Destructuring
+    console.log(movies)
 
-    /* If there is not registered user, the RegisterView is rendered. If there is a user registered,
-     the user details are *passed as a prop to the LoginView*/
-    if (!register)
-      return (
-        <RegistrationView
-          onRegistration={(register) => this.onRegistration(register)}
-        />
-      );
-
-    /* If there is no user, the LoginView is rendered. If there is a user logged in,
-     the user details are *passed as a prop to the LoginView*/
-    if (!user)
-      return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
-
-    // Before the movies have been loaded
-    if (movies.length === 0) return <div className="main-view" />;
+    if (movies.length === 0)
+      return <div className="main-view">The list is empty!</div>;
 
     return (
       <div className="main-view">
-        {
-          /*If the state of `selectedMovie` is not null, that selected movie 
-          will be returned otherwise, all *movies will be returned*/
-          selectedMovie ? (
-            <MovieView
-              movie={selectedMovie}
-              onBackClick={(newSelectedMovie) => {
-                this.setSelectedMovie(newSelectedMovie);
+        {selectedMovie ? (
+          <MovieView
+            movie={selectedMovie}
+            onBackClick={(newSelectedMovie) => {
+              this.setSelectedMovie(newSelectedMovie);
+            }}
+          />
+        ) : (
+          movies.map((movie) => (
+            <MovieCard
+              key={movie.Title}
+              movieData={movie}
+              onMovieClick={(movie) => {
+                this.setSelectedMovie(movie);
               }}
             />
-          ) : (
-            movies.map((movie) => (
-              <MovieCard
-                key={movie._id}
-                movieData={movie}
-                onMovieClick={(newSelectedMovie) => {
-                  this.setSelectedMovie(newSelectedMovie);
-                }}
-              />
-            ))
-          )
-        }
+          ))
+        )}
       </div>
     );
   }

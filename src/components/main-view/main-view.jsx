@@ -4,7 +4,7 @@ import axios from 'axios';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import { RegistrationView } from '../registration-view/registration-view'
+import { RegistrationView } from '../registration-view/registration-view';
 
 class MainView extends React.Component {
   constructor() {
@@ -12,6 +12,7 @@ class MainView extends React.Component {
     this.state = {
       movies:[],
       selectedMovie: null,
+      register: false,
     };
   }
 
@@ -35,11 +36,12 @@ class MainView extends React.Component {
     });
   }
 
-  onRegistration(user) {
+  onRegistration() {
     this.setState({
-      user,
+      register: true,
     });
   }
+
   
   /* When a user successfully logs in, this function updates the
    `user` property in state to that *particular user*/
@@ -50,12 +52,11 @@ class MainView extends React.Component {
   }
 
   render() {
-    const { movies, selectedMovie } = this.state;
+    const { movies, selectedMovie, user, register } = this.state;
 
+    if (!register) return <RegistrationView onRegistration={()=>this.onRegistration()}/>
     /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
-    // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-
-    // <RegistrationView/>;
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     // Before the movies have been loaded
     if (movies.length === 0) return <div className="main-view" />;

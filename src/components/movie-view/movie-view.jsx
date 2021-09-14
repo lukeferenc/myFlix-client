@@ -1,5 +1,7 @@
 import React from "react";
+import Row from 'react-bootstrap/Row';
 import axios from "axios";
+import './movie-view.scss';
 
 export class MovieView extends React.Component {
   constructor() {
@@ -25,18 +27,24 @@ export class MovieView extends React.Component {
 
 
     return (
-      <div className="movie-view">
-        <div className="movie-poster">
-          <img src={movie.ImgPath} />
-        </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
+      <div className="movie-view-wrapper ml-5 mt-3">
+        <Row>
+          <div className="movie-poster">
+            <img src={movie.ImgPath} />
+         </div>
+        </Row>
+        <Row>
+          <div className="movie-title">
+            <span className="label">Title: </span>
+            <span className="value">{movie.Title}</span>
+          </div>
+        </Row>
+        <Row>
         <div className="movie-description">
           <span className="label">Description: </span>
           <span className="value">{movie.Description}</span>
         </div>
+        </Row>
        {/* <div className="movie-genre">
           <span className="label">Genre: </span>
           <span className="value">{movie.Genre}</span>
@@ -45,13 +53,15 @@ export class MovieView extends React.Component {
           <span className="label">Director: </span>
           <span className="value">{movie.Director}</span>
     </div> */}
-        <button 
-          onClick={() => {
-            onBackClick(null);
-          }}
-        >
-          Back
-        </button>
+        <Row>
+          <button 
+            onClick={() => {
+              onBackClick(null);
+            }}
+          >
+            Back
+          </button>
+        </Row>
       </div>
     );
   }

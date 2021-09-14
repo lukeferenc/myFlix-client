@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import axios from 'axios';
+import Form from 'react-bootstrap/Form';
+import './registration-view.scss';
 
 
 export function RegistrationView(props) {
@@ -31,25 +33,36 @@ export function RegistrationView(props) {
   };
 
   return (
-    <form>
-      <label className="username">Username:
-      <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-      </label>
-      <label className="name">Name:
-      <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      </label>
-      <label className="password">Password:
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </label>
-      <label className="email">E-mail:
-      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </label>
-      <label className="birthday">Birth date:
-      <input type="date" value={birthday} onChange={(e) => setBirthdate(e.target.value)} />
-      </label>
-      <button className="registerBtn" type="submit" onClick={handleSubmit}>Register </button>
-    </form>
-  );
+    <Form className="RegForm" onSubmit={handleSubmit} noValidate validated={validated}>
+      <Form.Group controlId="formGroupUsername">
+        <Form.Label>Username</Form.Label>
+        <Form.Control type="text" placeholder="Enter Username" value={username} autoComplete="username" onChange={e => setUsername(e.target.value)} pattern='[a-zA-Z0-9]{5,}' minLength="5" required />
+        <Form.Control.Feedback type="invalid">Please provide a valid username at least 5 characters long.</Form.Control.Feedback>
+      </Form.Group>
+      <Form.Group controlId="formGroupPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Enter Password" value={password} autoComplete="password" onChange={e => setPassword(e.target.value)} minLength="5" required />
+        <Form.Control.Feedback type="invalid">Please provide a valid password at least 5 characters long.</Form.Control.Feedback>
+      </Form.Group>
+      <Form.Group controlId="formGroupEmail">
+        <Form.Label>Email</Form.Label>
+        <Form.Control type="email" placeholder="Enter Email" value={email} autoComplete="email" onChange={e => setEmail(e.target.value)} required />
+        <Form.Control.Feedback type="invalid">Please provide a valid email address.</Form.Control.Feedback>
+      </Form.Group>
+      <Form.Group controlId="formGroupBirthdate">
+        <Form.Label>Birthdate</Form.Label>
+        <Form.Control type="date" placeholder="00-00-0000" value={birthday} onChange={e => setBirthdate(e.target.value)} required />
+        <Form.Control.Feedback type='invalid'>Please enter a valid birthday.</Form.Control.Feedback>
+      </Form.Group>
+      <span>
+        <Button type="submit" onClick={handleSubmit}>Submit</Button>
+        {' '}
+        <Link to="/">
+          <Button variant="secondary" type="button">Back</Button>
+        </Link>
+      </span>
+    </Form >
+  )
 }
 
 RegistrationView.propTypes = {

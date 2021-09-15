@@ -1,4 +1,4 @@
-5946
+5948
 50C:\Users\lukep\coding\myFlix-client\.gitattributes132732900988630092 0
 100C:\Users\lukep\coding\myFlix-client\node_modules\@popperjs\core\lib\dom-utils\isScrollParent.js.flow121436361000000000 0
 80C:\Users\lukep\coding\myFlix-client\node_modules\uncontrollable\lib\package.json121436361000000000 0
@@ -54,7 +54,7 @@
 73C:\Users\lukep\coding\myFlix-client\node_modules\to-regex-range\README.md121436361000000000 0
 59C:\Users\lukep\coding\myFlix-client\node_modules\source-map132739626275494863 1
 89C:\Users\lukep\coding\myFlix-client\node_modules\react-bootstrap\esm\safeFindDOMNode.d.ts121436361000000000 0
-40C:\Users\lukep\coding\myFlix-client\dist132757755498705691 1
+40C:\Users\lukep\coding\myFlix-client\dist132761399726002647 1
 64C:\Users\lukep\coding\myFlix-client\node_modules\.bin\rimraf.cmd132739626281706260 0
 85C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\watcher\src\PromiseRunner.hh121436361000000000 0
 71C:\Users\lukep\coding\myFlix-client\node_modules\to-object-path\LICENSE130905636830000000 0
@@ -109,7 +109,7 @@
 58C:\Users\lukep\coding\myFlix-client\node_modules\fast-glob132739626273714479 1
 70C:\Users\lukep\coding\myFlix-client\node_modules\readdirp\package.json132739626276165015 0
 69C:\Users\lukep\coding\myFlix-client\node_modules\strip-ansi\readme.md121436361000000000 0
-50C:\Users\lukep\coding\myFlix-client\src\index.html132761197670062031 0
+50C:\Users\lukep\coding\myFlix-client\src\index.html132761200442088368 0
 60C:\Users\lukep\coding\myFlix-client\node_modules\imurmurhash132739626270993851 1
 73C:\Users\lukep\coding\myFlix-client\node_modules\source-map-url\readme.md121436361000000000 0
 77C:\Users\lukep\coding\myFlix-client\node_modules\msgpackr\tests\strings2.json121436361000000000 0
@@ -121,9 +121,9 @@
 72C:\Users\lukep\coding\myFlix-client\node_modules\react-bootstrap\LICENSE121436361000000000 0
 111C:\Users\lukep\coding\myFlix-client\node_modules\@restart\ui\node_modules\@restart\hooks\esm\useMediaQuery.d.ts121436361000000000 0
 73C:\Users\lukep\coding\myFlix-client\node_modules\string_decoder\README.md121436361000000000 0
-90C:\Users\lukep\coding\myFlix-client\src\components\registration-view\registration-view.jsx132760559782099349 0
+90C:\Users\lukep\coding\myFlix-client\src\components\registration-view\registration-view.jsx132761403177038615 0
 70C:\Users\lukep\coding\myFlix-client\node_modules\nice-try\package.json132739626277525315 0
-49C:\Users\lukep\coding\myFlix-client\src\index.jsx132760522556991746 0
+49C:\Users\lukep\coding\myFlix-client\src\index.jsx132761395831431730 0
 78C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\watcher\src\Signal.hh121436361000000000 0
 73C:\Users\lukep\coding\myFlix-client\node_modules\source-map\source-map.js131369414910000000 0
 61C:\Users\lukep\coding\myFlix-client\src\components\login-view132760551371873215 1
@@ -1989,7 +1989,7 @@
 95C:\Users\lukep\coding\myFlix-client\node_modules\react-bootstrap\ToggleButtonGroup\package.json121436361000000000 0
 80C:\Users\lukep\coding\myFlix-client\node_modules\dom-helpers\offset\package.json121436361000000000 0
 84C:\Users\lukep\coding\myFlix-client\node_modules\react-transition-group\esm\index.js121436361000000000 0
-62C:\Users\lukep\coding\myFlix-client\dist\index.6701a6e1.js.map132757755498685691 0
+62C:\Users\lukep\coding\myFlix-client\dist\index.6701a6e1.js.map132761399725982636 0
 85C:\Users\lukep\coding\myFlix-client\node_modules\react-bootstrap\cjs\ButtonGroup.d.ts121436361000000000 0
 74C:\Users\lukep\coding\myFlix-client\node_modules\define-property\README.md131614718340000000 0
 86C:\Users\lukep\coding\myFlix-client\node_modules\react-bootstrap\BootstrapModalManager132760517765823332 1
@@ -2721,13 +2721,14 @@
 88C:\Users\lukep\coding\myFlix-client\node_modules\react-bootstrap\cjs\DropdownToggle.d.ts121436361000000000 0
 86C:\Users\lukep\coding\myFlix-client\node_modules\@nodelib\fs.stat\out\types\index.d.ts121436361000000000 0
 86C:\Users\lukep\coding\myFlix-client\node_modules\react-bootstrap\cjs\DropdownToggle.js121436361000000000 0
-58C:\Users\lukep\coding\myFlix-client\dist\index.6701a6e1.js132757755498427060 0
+58C:\Users\lukep\coding\myFlix-client\dist\index.6701a6e1.js132761399725682570 0
 83C:\Users\lukep\coding\myFlix-client\node_modules\@parcel\fs\node_modules\mkdirp\bin132739626251359433 1
 89C:\Users\lukep\coding\myFlix-client\node_modules\react-bootstrap\cjs\ElementChildren.d.ts121436361000000000 0
 82C:\Users\lukep\coding\myFlix-client\node_modules\react-bootstrap\cjs\Feedback.d.ts121436361000000000 0
 96C:\Users\lukep\coding\myFlix-client\node_modules\mixin-deep\node_modules\is-extendable\README.md131496357780000000 0
 80C:\Users\lukep\coding\myFlix-client\node_modules\react-bootstrap\cjs\Feedback.js121436361000000000 0
 90C:\Users\lukep\coding\myFlix-client\node_modules\lmdb-store\dependencies\lz4\lib\README.md121436361000000000 0
+59C:\Users\lukep\coding\myFlix-client\dist\index.1d334ea1.css132761399725682570 0
 80C:\Users\lukep\coding\myFlix-client\node_modules\react-bootstrap\cjs\Figure.d.ts121436361000000000 0
 76C:\Users\lukep\coding\myFlix-client\node_modules\extend-shallow\package.json132739626279015657 0
 83C:\Users\lukep\coding\myFlix-client\node_modules\@nodelib\fs.walk\out\settings.d.ts121436361000000000 0
@@ -4021,7 +4022,7 @@
 82C:\Users\lukep\coding\myFlix-client\node_modules\highlight.js\lib\languages\qml.js121436361000000000 0
 87C:\Users\lukep\coding\myFlix-client\node_modules\highlight.js\lib\languages\routeros.js121436361000000000 0
 71C:\Users\lukep\coding\myFlix-client\node_modules\dom-helpers\esm\css.js121436361000000000 0
-51C:\Users\lukep\coding\myFlix-client\dist\index.html132757725927996172 0
+51C:\Users\lukep\coding\myFlix-client\dist\index.html132761390817401671 0
 92C:\Users\lukep\coding\myFlix-client\node_modules\fast-glob\node_modules\micromatch\README.md121436361000000000 0
 83C:\Users\lukep\coding\myFlix-client\node_modules\highlight.js\lib\languages\ruby.js121436361000000000 0
 92C:\Users\lukep\coding\myFlix-client\node_modules\highlight.js\lib\languages\ruleslanguage.js121436361000000000 0
@@ -5944,4 +5945,5 @@
 64C:\Users\lukep\coding\myFlix-client\node_modules\.bin\semver.ps1132739626281506209 0
 59C:\Users\lukep\coding\myFlix-client\node_modules\.bin\which132739626281656245 0
 63C:\Users\lukep\coding\myFlix-client\node_modules\.bin\which.ps1132739626281656245 0
+63C:\Users\lukep\coding\myFlix-client\dist\index.1d334ea1.css.map132761399725942642 0
 63C:\Users\lukep\coding\myFlix-client\dist\index.caa67093.css.map132757725928266335 0

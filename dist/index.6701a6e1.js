@@ -26468,21 +26468,32 @@ parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
 var _registrationViewScss = require("./registration-view.scss");
 var _s = $RefreshSig$();
 function RegistrationView(props) {
     _s();
     const [username, setUsername] = _react.useState("");
-    const [name, setName] = _react.useState("");
     const [password, setPassword] = _react.useState("");
     const [email, setEmail] = _react.useState("");
-    const [birthday, setBirthdate] = _react.useState("");
+    const [birthday, setBirthday] = _react.useState("");
+    const [usernameError, setUsernameError] = _react.useState({
+    });
+    const [passwordError, setPasswordError] = _react.useState({
+    });
+    const [emailError, setEmailError] = _react.useState({
+    });
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, name, password, email, birthday);
@@ -26500,225 +26511,253 @@ function RegistrationView(props) {
             console.log('problem registering new user');
         });
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
-        className: "RegForm",
-        onSubmit: handleSubmit,
-        noValidate: true,
-        validated: validated,
+    const formValidation = ()=>{
+        const usernameError1 = {
+        };
+        const passwordError1 = {
+        };
+        const emailError1 = {
+        };
+        let isValid = true;
+        if (username.length < 4 || username === '') {
+            usernameError1.UsernameToShort = "Username must be more than 4 characters.";
+            isValid = false;
+        }
+        if (password.length < 6 || password === '') {
+            passwordError1.noPassword = "You must enter a password at least 6 characters long.";
+            isValid = false;
+        }
+        if (!email || email.indexOf('@') === -1) {
+            emailError1.notValidEmail = "Your email doesn't look quite right.";
+            isValid = false;
+        }
+        setUsernameError(usernameError1);
+        setPasswordError(passwordError1);
+        setEmailError(emailError1);
+        return isValid;
+    };
+    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+        className: "register-wrapper",
         __source: {
             fileName: "src/components/registration-view/registration-view.jsx",
-            lineNumber: 36
+            lineNumber: 66
         },
         __self: this,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                controlId: "formGroupUsername",
-                __source: {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 37
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 38
-                        },
-                        __self: this,
-                        children: "Username"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                        type: "text",
-                        placeholder: "Enter Username",
-                        value: username,
-                        autoComplete: "username",
-                        onChange: (e)=>setUsername(e.target.value)
-                        ,
-                        pattern: "[a-zA-Z0-9]{5,}",
-                        minLength: "5",
-                        required: true,
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 39
-                        },
-                        __self: this
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control.Feedback, {
-                        type: "invalid",
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 40
-                        },
-                        __self: this,
-                        children: "Please provide a valid username at least 5 characters long."
-                    })
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                controlId: "formGroupPassword",
-                __source: {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 42
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 43
-                        },
-                        __self: this,
-                        children: "Password"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                        type: "password",
-                        placeholder: "Enter Password",
-                        value: password,
-                        autoComplete: "password",
-                        onChange: (e)=>setPassword(e.target.value)
-                        ,
-                        minLength: "5",
-                        required: true,
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 44
-                        },
-                        __self: this
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control.Feedback, {
-                        type: "invalid",
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 45
-                        },
-                        __self: this,
-                        children: "Please provide a valid password at least 5 characters long."
-                    })
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                controlId: "formGroupEmail",
-                __source: {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 47
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 48
-                        },
-                        __self: this,
-                        children: "Email"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                        type: "email",
-                        placeholder: "Enter Email",
-                        value: email,
-                        autoComplete: "email",
-                        onChange: (e)=>setEmail(e.target.value)
-                        ,
-                        required: true,
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 49
-                        },
-                        __self: this
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control.Feedback, {
-                        type: "invalid",
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 50
-                        },
-                        __self: this,
-                        children: "Please provide a valid email address."
-                    })
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                controlId: "formGroupBirthdate",
-                __source: {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 52
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 53
-                        },
-                        __self: this,
-                        children: "Birthdate"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                        type: "date",
-                        placeholder: "00-00-0000",
-                        value: birthday,
-                        onChange: (e)=>setBirthdate(e.target.value)
-                        ,
-                        required: true,
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 54
-                        },
-                        __self: this
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control.Feedback, {
-                        type: "invalid",
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 55
-                        },
-                        __self: this,
-                        children: "Please enter a valid birthday."
-                    })
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs("span", {
-                __source: {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 57
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(Button, {
-                        type: "submit",
-                        onClick: handleSubmit,
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 58
-                        },
-                        __self: this,
-                        children: "Submit"
-                    }),
-                    ' ',
-                    /*#__PURE__*/ _jsxRuntime.jsx(Link, {
-                        to: "/",
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 60
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(Button, {
-                            variant: "secondary",
-                            type: "button",
+        children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+            className: "register-form",
+            noValidate: true,
+            __source: {
+                fileName: "src/components/registration-view/registration-view.jsx",
+                lineNumber: 67
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 69
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 61
+                                lineNumber: 70
                             },
                             __self: this,
-                            children: "Back"
+                            children: "Username:"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                            type: "text",
+                            name: "username",
+                            value: username,
+                            required: true,
+                            onChange: (e)=>setUsername(e.target.value)
+                            ,
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 73
+                            },
+                            __self: this
                         })
-                    })
-                ]
-            })
-        ]
+                    ]
+                }),
+                Object.keys(usernameError).map((key)=>{
+                    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        className: "form-validation-error",
+                        __source: {
+                            fileName: "src/components/registration-view/registration-view.jsx",
+                            lineNumber: 84
+                        },
+                        __self: this,
+                        children: usernameError[key]
+                    }, key));
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 89
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 90
+                            },
+                            __self: this,
+                            children: "Create Password:"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                            type: "password",
+                            name: "password",
+                            value: password,
+                            required: true,
+                            onChange: (e)=>setPassword(e.target.value)
+                            ,
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 93
+                            },
+                            __self: this
+                        })
+                    ]
+                }),
+                Object.keys(passwordError).map((key)=>{
+                    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        className: "form-validation-error",
+                        __source: {
+                            fileName: "src/components/registration-view/registration-view.jsx",
+                            lineNumber: 103
+                        },
+                        __self: this,
+                        children: passwordError[key]
+                    }, key));
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 108
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 109
+                            },
+                            __self: this,
+                            children: "Email:"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                            type: "email",
+                            name: "email",
+                            value: email,
+                            required: true,
+                            onChange: (e)=>setEmail(e.target.value)
+                            ,
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 112
+                            },
+                            __self: this
+                        })
+                    ]
+                }),
+                Object.keys(emailError).map((key)=>{
+                    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        className: "form-validation-error",
+                        __source: {
+                            fileName: "src/components/registration-view/registration-view.jsx",
+                            lineNumber: 122
+                        },
+                        __self: this,
+                        children: emailError[key]
+                    }, key));
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 127
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 128
+                            },
+                            __self: this,
+                            children: "Birthday:"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                            type: "date",
+                            name: "birthday",
+                            value: birthday,
+                            placeholder: "YYYY-MM-DD",
+                            onChange: (e)=>setBirthday(e.target.value)
+                            ,
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 131
+                            },
+                            __self: this
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 139
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            className: "reg-btns mt-1",
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 140
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                variant: "link",
+                                href: "/",
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 141
+                                },
+                                __self: this,
+                                children: "Back to login"
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            className: "reg-btns mt-1",
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 143
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                size: "md",
+                                variant: "primary",
+                                type: "submit",
+                                ml: "4",
+                                onClick: handleSubmit,
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 144
+                                },
+                                __self: this,
+                                children: "Submit"
+                            })
+                        })
+                    ]
+                })
+            ]
+        })
     }));
 }
-_s(RegistrationView, "bvXOWRL/0HeYBR2H9nxw/M18WNs=");
+_s(RegistrationView, "jCPcO1VOFS64zxuNNZZTxAl1HvI=");
 _c = RegistrationView;
 RegistrationView.propTypes = {
     register: _propTypesDefault.default.shape({
@@ -26737,7 +26776,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","axios":"iYoWk","react-bootstrap/Form":"5ykgY","./registration-view.scss":"fr9ZP","@parcel/transformer-js/src/esmodule-helpers.js":"9NzeX","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dW2ht"}],"fr9ZP":[function() {},{}],"jyMAr":[function() {},{}],"jUTZ8":[function() {},{}],"2PRIq":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","axios":"iYoWk","react-bootstrap/Form":"5ykgY","./registration-view.scss":"fr9ZP","@parcel/transformer-js/src/esmodule-helpers.js":"9NzeX","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dW2ht","react-bootstrap/Button":"9CzHT","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0"}],"fr9ZP":[function() {},{}],"jyMAr":[function() {},{}],"jUTZ8":[function() {},{}],"2PRIq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
